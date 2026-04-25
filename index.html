@@ -69,20 +69,6 @@
       transform: translateY(-2px);
     }
 
-    .hamburger {
-      display: none;
-      flex-direction: column;
-      cursor: pointer;
-      gap: 4px;
-    }
-
-    .hamburger span {
-      width: 25px;
-      height: 3px;
-      background: white;
-      transition: 0.3s;
-    }
-
     /* Hero Section */
     .hero {
       height: 100vh;
@@ -194,16 +180,11 @@
   <nav class="navbar">
     <div class="nav-container">
       <a href="Index.html" class="logo">
-        <i class="fas fa-building"></i> SIPERKA
+        <i></i> SIPERKA
       </a>
       <ul class="nav-menu" id="nav-menu">
-        <li><a href="login.html" class="nav-link"><i class="fas fa-sign-in-alt"></i> Login</a></li>
+        <li><a href="login.html" class="cta-button"></i> Login</a></li>
       </ul>
-      <div class="hamburger" id="hamburger">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
     </div>
   </nav>
 
@@ -221,14 +202,6 @@
   </footer>
 
   <script>
-    // Mobile menu toggle
-    const hamburger = document.getElementById('hamburger');
-    const navMenu = document.getElementById('nav-menu');
-
-    hamburger.addEventListener('click', () => {
-      navMenu.classList.toggle('active');
-    });
-
     // Close menu on link click
     document.querySelectorAll('.nav-link').forEach(link => {
       link.addEventListener('click', () => {
