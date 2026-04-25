@@ -61,6 +61,24 @@
       background: rgba(255,255,255,0.2);
       transform: translateY(-2px);
     }
+    .cta-button {
+      background: rgba(255, 255, 255, 0.2);
+      color: white;
+      padding: 1rem 2rem;
+      border: 2px solid white;
+      border-radius: 50px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(10px);
+    }
+    .cta-button:hover {
+      background: white;
+      color: #667eea;
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    }
     /* Hero/Login Section - Matching Index theme */
     .hero {
       height: 100vh;
@@ -208,7 +226,7 @@
         <i></i> SIPERKA
       </a>
         <ul class="nav-menu" id="nav-menu">
-            <li><a href="login.html" class="nav-link cta-button"><i class="fas fa-sign-in-alt"></i> Login</a></li>
+            <li><a href="login.html" class="cta-button">Login</a></li>
         </ul>
     </div>
   </nav>
