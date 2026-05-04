@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=1200, initial-scale=1.0">
-  <title>Login - SIPERKA</title>
+  <title>Booking Ruangan - SIPERKA</title>
   <style>
     * {
       margin: 0;
@@ -61,13 +61,7 @@
       background: rgba(255,255,255,0.2);
       transform: translateY(-2px);
     }
-    .cta-button:hover {
-      background: white;
-      color: #667eea;
-      transform: translateY(-3px);
-      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-    }
-    /* Hero/Login Section - Matching Index theme */
+    /* Booking Hero */
     .hero {
       height: 100vh;
       background: linear-gradient(135deg, #74b9ff 0%, #0984e3 50%, #00b894 100%);
@@ -75,23 +69,11 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      text-align: center;
-      color: white;
       padding: 0 2rem;
       animation: fadeIn 1.5s ease-out;
       position: relative;
     }
-    @keyframes fadeIn {
-      from { 
-        opacity: 0; 
-        transform: translateY(30px); 
-      }
-      to { 
-        opacity: 1; 
-        transform: translateY(0); 
-      }  
-    }
-    .login-container {
+    .booking-container {
       background: rgba(255, 255, 255, 0.1);
       backdrop-filter: blur(20px);
       border: 1px solid rgba(255, 255, 255, 0.2);
@@ -99,7 +81,7 @@
       padding: 3rem;
       max-width: 400px;
       width: 400px;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
       animation: slideUp 0.8s ease-out;
       text-align: center;
     }
@@ -107,13 +89,13 @@
       from { opacity: 0; transform: translateY(50px); }
       to { opacity: 1; transform: translateY(0); }
     }
-    .login-container i {
+    .booking-container i {
       font-size: 3rem;
       color: white;
       margin-bottom: 1rem;
       opacity: 0.9;
     }
-    .login-container h2 {
+    .booking-container h2 {
       font-size: 2rem;
       font-weight: 600;
       margin-bottom: 2rem;
@@ -126,7 +108,7 @@
     }
     .form-group label {
       display: block;
-      color: rgba(255,255,255,0.9);
+      color: rgba(255,255,255,0.95);
       font-weight: 500;
       margin-bottom: 0.5rem;
     }
@@ -138,7 +120,7 @@
       color: #667eea;
       z-index: 1;
     }
-    .form-group input {
+    .form-group input, .form-group select {
       width: 100%;
       padding: 1rem 1rem 1rem 3rem;
       border: 2px solid rgba(255,255,255,0.3);
@@ -150,17 +132,20 @@
       transition: all 0.3s ease;
       font-family: inherit;
     }
-    .form-group input::placeholder {
+    .form-group input::placeholder, .form-group select option {
       color: rgba(255,255,255,0.7);
     }
-    .form-group input:focus {
+    .form-group select option {
+      color: #333;
+    }
+    .form-group input:focus, .form-group select:focus {
       outline: none;
       border-color: #667eea;
       background: rgba(255,255,255,0.2);
       box-shadow: 0 0 20px rgba(102,126,234,0.4);
       transform: translateY(-2px);
     }
-    .login-btn {
+    .booking-btn {
       width: 100%;
       background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
       color: white;
@@ -174,7 +159,7 @@
       font-family: inherit;
       margin-bottom: 1rem;
     }
-    .login-btn:hover {
+    .booking-btn:hover {
       transform: translateY(-3px);
       box-shadow: 0 10px 25px rgba(102,126,234,0.4);
     }
@@ -182,18 +167,11 @@
       color: rgba(255,255,255,0.8);
       text-decoration: none;
       font-size: 0.9rem;
+      margin-top: 1.5rem;
       transition: color 0.3s;
     }
     .back-link:hover {
       color: white;
-    }
-    /* Main Content */
-    .main-content {
-      padding-top: 100px;
-      min-height: 100vh;
-      padding: 4rem 2rem;
-      max-width: 1200px;
-      margin: 0 auto;
     }
     /* Footer */
     .footer {
@@ -203,7 +181,6 @@
       padding: 2rem;
       margin-top: auto;
     }
-
   </style>
 </head>
 <body>
@@ -213,42 +190,48 @@
       <a href="Index.html" class="logo">
         <i></i> SIPERKA
       </a>
-        <ul class="nav-menu" id="nav-menu"><li><a href="login.html" class="nav-link active"><i class="fas fa-sign-in-alt"></i> Login</a></li>        </ul>
+      <ul class="nav-menu" id="nav-menu">        
+        <li><a href="Dashboard_user.html" class="nav-link"><i class="fas fa-cog"></i> Dashboard</a></li>
+        <li><a href="login.html" class="nav-link"><i class="fas fa-sign-in-alt"></i> Login</a></li>
+        <li><a href="Data.html" class="nav-link"><i class="fas fa-list"></i> Lihat Ruangan</a></li>
+        <li><a href="Booking.html" class="nav-link active"><i class="fas fa-calendar-plus"></i> Booking Ruangan</a></li>
+        <li><a href="Status.html" class="nav-link"><i class="fas fa-chart-bar"></i> Lihat Status</a></li>
+      </ul>
     </div>
   </nav>
 
-  <!-- Login Hero Section -->
+  <!-- Booking Form -->
   <section class="hero">
-    <div class="login-container">
-      <i class="fas fa-lock"></i>
-      <h2>Masuk ke Sistem</h2>
-      <form id="loginForm">
+    <div class="booking-container">
+      <i class="fas fa-calendar-check"></i>
+      <h2>Booking Ruangan</h2>
+      <form id="bookingForm">
         <div class="form-group">
-          <label><i class="fas fa-user"></i> Username</label>
-          <input type="text" id="username" placeholder="Masukkan username" required>
+          <label>Pilih Ruangan <i class="fas fa-building"></i></label>
+          <select name="ruangan" required>
+            <option value="">Pilih ruangan</option>
+            <option value="Ruang A">Ruang A (20 orang)</option>
+            <option value="Ruang B">Ruang B (50 orang)</option>
+            <option value="Ruang C">Ruang C (100 orang)</option>
+          </select>
         </div>
         <div class="form-group">
-          <label><i class="fas fa-key"></i> Password</label>
-          <input type="password" id="password" placeholder="Masukkan password" required>
+          <label>Tanggal <i class="fas fa-calendar"></i></label>
+          <input type="date" name="tanggal" required>
         </div>
         <div class="form-group">
-          <label><i class="fas fa-user-tag"></i> Role</label>
-          <input type="text" id="role" placeholder="Masukkan role (Huruf Kapitil)" required>
+          <label>Waktu Mulai <i class="fas fa-clock"></i></label>
+          <input type="time" name="waktu" required>
         </div>
-        <button type="submit" class="login-btn">
-          <i class="fas fa-sign-in-alt"></i> Login
+        <button type="submit" class="booking-btn">
+          <i class="fas fa-paper-plane"></i> Konfirmasi Booking
         </button>
       </form>
-      <a href="Index.html" class="back-link">
-        <i class="fas fa-arrow-left"></i> Kembali ke Home
+      <a href="Data.html" class="back-link">
+        <i class="fas fa-arrow-left"></i> Lihat Ruangan Dulu
       </a>
     </div>
   </section>
-
-  <!-- Placeholder Main -->
-  <main class="main-content" style="display: none;">
-    <h2>Content Placeholder</h2>
-  </main>
 
   <!-- Footer -->
   <footer class="footer">
@@ -256,30 +239,10 @@
   </footer>
 
   <script>
-    // Login form handling
-    const loginForm = document.getElementById('loginForm');
-    loginForm.addEventListener('submit', function(e) {
+    // Form submission
+    document.getElementById('bookingForm').addEventListener('submit', (e) => {
       e.preventDefault();
-      
-      const username = document.getElementById('username').value;
-      const password = document.getElementById('password').value;
-      const role = document.getElementById('role').value.toLowerCase();
-      
-      // Simple authentication simulation
-      if (username && password) {
-        // Store user info in localStorage for demo purposes
-        localStorage.setItem('userRole', role || 'user'); // Default to 'user' if empty
-        localStorage.setItem('username', username);
-        
-        // Redirect based on role - admin goes to admin dashboard, others go to user dashboard
-        if (role === 'admin') {
-          window.location.href = 'Dashboard_Admin.html';
-        } else {
-          window.location.href = 'Dashboard_User.html';
-        }
-      } else {
-        alert('Harap isi semua field!');
-      }
+      alert('Booking berhasil diajukan! Cek status di halaman Status.');
     });
   </script>
 </body>
