@@ -81,7 +81,6 @@
       align-items: center;
       padding: 0 2rem;
       animation: fadeIn 1.5s ease-out;
-      position: relative;
     }
 
     .booking-container {
@@ -231,7 +230,7 @@
         <li><a href="Dashboard_user.html" class="nav-link"><i class="fas fa-cog"></i> Dashboard</a></li>
         <li><a href="Data_room.html" class="nav-link"><i class="fas fa-list"></i> Lihat Ruangan</a></li>
         <li><a href="Booking.html" class="nav-link active"><i class="fas fa-calendar-plus"></i> Booking Ruangan</a></li>
-        <li><a href="Status.html" class="nav-link"><i class="fas fa-chart-bar"></i> Lihat Status</a></li>
+        <li><a href="Status.html" class="nav-link"><i class="fas fa-chart-bar"></i> Status Booking</a></li>
         <li><a href="login.html" class="nav-link"> Logout</a></li>
       </ul>
     </div>
@@ -253,12 +252,12 @@
           </select>
         </div>
         <div class="form-group">
-          <label>Tanggal <i class="fas fa-calendar"></i></label>
-          <input type="date" name="tanggal" required>
+          <label for="tanggal">Tanggal <i class="fas fa-calendar"></i></label>
+          <input type="date" id="tanggal" name="tanggal" required>
         </div>
         <div class="form-group">
-          <label>Waktu Mulai <i class="fas fa-clock"></i></label>
-          <input type="time" name="waktu" required>
+          <label for="waktu">Waktu Mulai <i class="fas fa-clock"></i></label>
+          <input type="time" id="waktu" name="waktu" required>
         </div>
         <button type="submit" class="booking-btn">
           <i class="fas fa-paper-plane"></i> Konfirmasi Booking
@@ -279,7 +278,7 @@
     // Form submission
     document.getElementById('bookingForm').addEventListener('submit', (e) => {
       e.preventDefault();
-      alert('Booking berhasil diajukan! Cek status di halaman Status.');
+      // Popup removed: booking tetap tidak mengirimkan data pada halaman statis ini.
     });
   </script>
 </body>

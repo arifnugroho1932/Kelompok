@@ -97,16 +97,22 @@
         }
 
         .hero h1 {
-            font-size: 4rem;
+            font-size: clamp(2.5rem, 5vw, 4rem);
             font-weight: 700;
             margin-bottom: 1rem;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
         }
 
         .hero p {
-            font-size: 1.5rem;
-            margin-bottom: 2rem;
+            font-size: 1.2rem;
+            margin-bottom: 3rem;
             max-width: 600px;
+        }
+
+        .main-content h1 {
+            font-size: clamp(3rem, 5vw, 5rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
         }
 
         .cta-button {
@@ -137,7 +143,6 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-
             color: white;
         }
 
@@ -161,7 +166,7 @@
             </a>
             <ul class="nav-menu" id="nav-menu">
                 <li><a href="Dashboard_User.html" class="nav-link active"> Dashboard</a></li>
-                <li><a href="Data.html" class="nav-link"> Lihat Ruangan</a></li>
+                <li><a href="Data_room.html" class="nav-link"> Lihat Ruangan</a></li>
                 <li><a href="Booking.html" class="nav-link"> Booking Ruangan</a></li>
                 <li><a href="Status.html" class="nav-link"> Status Booking</a></li>
                 <li><a href="login.html" class="nav-link"> Logout</a></li>
@@ -173,7 +178,7 @@
         <div>
             <h1>Selamat Datang di SIPERKA </h1>
             <p>
-                Sistem Informasi Peminjaman Ruangan yang memudahkan Anda untuk melihat,
+                Sistem Informasi Peminjaman Ruangan yang memudahkan anda untuk melihat,<br>
                 memesan, dan mengelola penggunaan ruangan dengan cepat dan efisien.
             </p>
         </div>
